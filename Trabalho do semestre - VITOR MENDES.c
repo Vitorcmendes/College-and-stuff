@@ -13,6 +13,7 @@
 // 8 - Comparar os números exibidos com os digitados
 // 9 - Exibir as respectivas mensagens de erro ou acerto
 // 10 - Perguntar se o jogador deseja continuar e ler sua resposta
+// Código escrito na plataforma GDB Online Debugger (linux) algumas funções podem ser incompatíveis.
 
 
 
