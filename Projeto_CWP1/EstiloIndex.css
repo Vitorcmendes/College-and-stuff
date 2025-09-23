@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+}
+
+#faixaSuperior {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1%;
+        /* background-color:rgb(46, 53, 58); */
+        background: linear-gradient(to right, rgb(3, 36, 58) 65%, rgb(1, 48, 78) 75%);  /* rgb(3, 36, 58); */
+        width: auto;
+        height: 30px;
+}
+
+ #botaologin {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+ }
+
+ #botaocadastro {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 70px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+ }
+
+ #apresentacao {
+    display: flex;
+    width: 100%;
+    height: 30vh; /* altura relativa à altura da tela */
+    position: relative;
+}
+
+#carrossel{
+    position:absolute;
+    width: 37%;
+    height: 100%;
+    background-color: black;
+    left: 0;
+    z-index: 1;
+}
+
+#imagemcarrossel{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cobre o espaço mantendo proporção */
+    object-position: left;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#faixa-trapezio {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(3, 36, 58) 55%, rgb(1, 48, 78) 65%);  /* rgb(3, 36, 58); */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    right: 0;
+    z-index: 2;
+}
+
+#logosuperior {
+    width: 330px; 
+    height: 94%; 
+    margin-left: 21%;
+    display: block;
+    object-fit: contain;
+}
+
+#faixaopcoes {
+        height: 40px;
+        width: auto;
+        background-color: white;
+        /* border-top: solid 1px black; */
+        border-bottom: solid 1px black;
+    }
+
+ #containeropcoes{
+        width: 70%;
+        height: 100%;
+        margin-left: 14%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+#procurar{
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+    
+}
+
+#propor{
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+}
+
+#dicionario{
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+}
+
+#dedicadas{
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+}
+
+#sobrenos{
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+}
+
+#estudeconosco {
+    text-decoration: none;
+    color: rgb(255, 233, 39);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:smaller;
+}
+
+#containerbanners1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  /*espaçamento lateral */
+  align-items: stretch;
+  flex-wrap: wrap; /* quebra para linha abaixo em telas pequenas */
+  width: 100%;
+  /* margin: 60px 0px; */
+  padding: 60px 60px 60px 0;
+  row-gap: 30px;
+  background-color: whitesmoke;
+  
+}
+
+.Pbanner {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: left;
+    font-size: clamp(0.4rem, 1.3vw, 0.8rem);
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 4%;
+    
+}
+
+.Tbanner{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin: 1% 2% 2% 2%;
+    text-align: center;
+    
+}
+
+.imagembanner {
+  width: 100%;
+  height: 5%;
+  max-width: 450px;
+  max-height: 250px;
+  margin: 0 auto;
+  border-radius: 10px;
+
+} 
+
+#banner1 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    min-width: 380px;
+    max-width: 550px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    border: 2px solid black;
+    margin: auto auto auto 15%;
+
+}
+
+#banner2 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    min-width: 380px;
+    max-width: 550px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    border: 2px solid black;
+    margin: auto 15% auto 1%;
+
+}
+
+#banner3 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    min-width: 380px;
+    max-width: 550px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    border: 2px solid black;
+    margin: auto auto auto 15%;
+
+}
+
+#banner4 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    min-width: 380px;
+    max-width: 550px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    border: 2px solid black;
+    margin: auto 15% auto 1%;
+
+}
+
+footer {
+    display: flex;
+    border-top: 7px solid black;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(to right, rgb(3, 36, 58) 55%, rgb(1, 48, 78) 65%);  /* rgb(3, 36, 58); */ 
+    justify-content: space-evenly;
+}
+
+#logofooter{
+    width: 20%;
+    height: 94%;
+    padding-top: 3%;
+    object-fit: contain;
+    padding-left: 50px;
+     
+}
+
+#imgfooter{
+    display: flex;
+    justify-self: flex-end;
+    width: 100%;
+    height: 52%;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 80%;
+    margin-top: 2%;
+    background-color:  rgb(3, 36, 58);
+    padding-top: 3%;
+    
+}
+
+.opcoesfooter{
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    margin: 2% 0 0 auto;   
+}
+
+#trabalheconosco.opcoesfooter{
+    margin-bottom: 15%;
+
+}
+
+#nomeintegrantegrupo{
+    color: white;
+    align-self: flex-end;
+    margin-top: auto;
+
+}
+
+ #containerredessociais {
+    
+  display: flex;
+  justify-content: flex-end; /*alinha os ícones à direita dentro da div não consegui usar o margin: 0 0 0 auto; igual fiz no .opcoesfooter    */
+  margin-top: 1%;
+    
+}
+
+.redessociais{
+     width: 40px;
+     height: 40px;
+     margin: 10px;  
+    transition: transform 0.3s ease;
+}
+
+.redessociais:hover {
+  transform: scale(1.2); /* Aumenta 20% */
+  cursor: pointer;
+}
+
+#map {
+    width: 35%;
+    height: 85%;
+    margin-top: 2%;
+    margin-right: 5%;
+}
+

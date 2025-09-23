@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  height: 100vh;
+}
+
+#faixaSuperior {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1%;
+  background: linear-gradient(to right, rgb(3, 36, 58) 65%, rgb(1, 48, 78) 75%);
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+main {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+section {
+  background-color: whitesmoke;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+
+
+.container-botao {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+button[type="submit"] {
+  background-color: rgb(3, 36, 58);
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+  
+
+p {
+  margin-top: 25px;
+  font-size: 13px;
+  text-align: center;
+}
+
+a {
+  color: rgb(1, 48, 78);
+  text-decoration: none;
+  font-weight: bold;
+}
