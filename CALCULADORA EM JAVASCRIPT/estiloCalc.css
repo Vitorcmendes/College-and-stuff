@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-image: url('imgcalc.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+#containercalculadora{
+    height: 500px;
+    width: 600px;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    background-color: gray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+}
+
+#telacalculadora{
+    height: 15%;
+    width: 90%;
+    border-radius: 1%;
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: right;
+    
+}
+
+#painelbotoes{
+    display: flex;       /* linha horizontal */
+    gap: 20px;           /* espaço entre as duas divs */
+    width: 90%;
+    flex: 1;
+}
+
+#calculadoranumeros{
+    height: 80%;
+    width: 50%;
+    display: flex ;
+    align-self: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;            
+    justify-content: center;
+    margin-top: 5%;
+   
+
+}
+
+.botoesnumeros{
+    height: 35px;
+    width: 70px;
+    border-radius: 2px;
+
+}
+
+.botaoapaga{
+    height: 35px;
+    width: 70px;
+    border-radius: 2px;
+
+}
+
+#calculadoraoperacoes{
+   height: 80%;
+    width: 50%;
+    display: flex ;
+    align-self: flex-start;
+    justify-content:space-between;
+    flex-wrap: wrap;            
+    margin-top: 5%;
+    flex-direction: column;
+
+}
+
+.botoesoperacao{
+     height: 50px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+
+}
+
+#igual{
+
+    height: 50px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
