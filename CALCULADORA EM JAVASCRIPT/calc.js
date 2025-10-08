@@ -3,9 +3,9 @@
 // Isso significa que, usando input, eu tenho texto mas para executar o cálculo final, precisarei converter pra número bruto
 
 var tela = document.getElementById('telacalculadora')
-var botoesnumeros = document.getElementsByClassName('botoesnumeros')
-var botaoapaga = document.getElementsByClassName('botaoapaga')
-var botoesoperacao = document.getElementsByClassName('botoesoperacao')
+var botoesNumeros = document.getElementsByClassName('botoesnumeros')
+var botaoApaga = document.getElementsByClassName('botaoapaga')
+var botoesOperacao = document.getElementsByClassName('botoesoperacao')
 var Operador = ["+", "-", "*", "/", "^", "x"]
 var inicio=0
 
@@ -32,7 +32,7 @@ botao.addEventListener('click', numeroNaTela)
 
 function numeroNaTela(e) {
       
-  var éOperador = Operador.includes(e.currentTarget.value)
+  var isOperador = Operador.includes(e.currentTarget.value)
       
 
      //Se estiver zerado, está no início do cálculo
@@ -43,7 +43,7 @@ function numeroNaTela(e) {
       // Se a variável início for 1, significa que a tela mostra o valor após clicar =
       // Nesse caso se o próximo botão digitado for número, ele limpa e começa o cálculo do início,
       // se for um operador, ele continua o cálculo a partir do último resultado 
-      else if (inicio == 1 && !éOperador) { 
+      else if (inicio == 1 && !isOperador) { 
         tela.value = e.currentTarget.value
         
       }else {tela.value = tela.value + e.currentTarget.value
@@ -72,4 +72,5 @@ function numeroNaTela(e) {
 
       inicio = 1
     }
+
 
