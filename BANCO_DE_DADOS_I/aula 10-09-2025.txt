@@ -1,0 +1,13 @@
+slides 10 a 25 - ler
+slide 28 - apenas alternativa 2 para primeira forma normal
+para criar uma nova tabela na primeira forma normal,
+a nova tabela terá os atributos da tabela aninhada(de dentro)
+mais a chave primária da tabela não normalizada.
+
+slide 31
+slide 32
+slide 33
+slide 54 - dependencia funcional
+slide 60
+slide 62 - segunda forma normal
+slide 78 - dependencia funcnioal transitiva

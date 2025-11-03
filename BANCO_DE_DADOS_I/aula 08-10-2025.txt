@@ -1,0 +1,10 @@
+• teste com null é is null ou is not null
+
+• Select distinct mostra os dados sem duplicar
+
+• tratamento de datas é diferente no SQL
+
+• to char converte data em string
+
+• to date converte uma string para uma data
+com a máscara que você passar (ex: dd/mm/aaaa)

@@ -1,0 +1,86 @@
+• CREATE TABLE
+nome_da_tabela (
+    nome_coluna1 tipo_de_dado constraints,
+    nome_coluna2 tipo_de_dado [constraints],);
+
+Cada linha dentro dos parênteses define uma coluna, com:
+Nome da coluna, tipo de dado, restrições.
+as restrições são opcionais.
+
+• select table_name from user_tables;
+mostra todas as tabelas criadas
+
+• DROP TABLE 
+Por padrão, o Oracle envia a tabela excluída para a “Recycle Bin” (como uma lixeira interna).
+Você ainda pode restaurar a tabela com FLASHBACK TABLE depois.
+Se quiser remover totalmente (sem ir pra lixeira), use PURGE
+Remove automaticamente todas as constraints de outras tabelas que referenciavam departamentos
+
+• ALTER TABLE
+Alter table pode adicionar ou remover ou modificar colunas, adicionar ou remover restrições
+e renomear colunas ou a própria tabela.
+
+ALTER TABLE nome_tabela
+ADD CONSTRAINT fk_departamento
+FOREIGN KEY (id_departamento)
+REFERENCES departamento (id_departamento);
+
+fk_departamento é o nome da constraint
+
+Pra chave primária, o comando seria
+ALTER TABLE nome_tabela
+ADD CONSTRAINT nome_da_constraint
+PRIMARY KEY (id_funcionario)
+
+• INSERT INTO
+é o comando usado para inserir dados dentro de uma tabela.
+No Oracle (e na maioria dos bancos SQL), ele funciona basicamente de duas maneiras:
+inserindo valores em todas as colunas ou especificando colunas específicas.
+
+INSERT INTO nome_tabela
+VALUES (valor1, valor2, valor3, ...);
+
+Os valores precisam estar na mesma ordem das colunas da tabela.
+Todos os campos devem ser preenchidos, a menos que tenham DEFAULT ou aceitem NULL
+
+
+INSERT INTO funcionarios
+VALUES (1, 'João Silva', 'Analista', 5000, TO_DATE('2025-01-15', 'YYYY-MM-DD'));
+
+se eu quisesse pular o preenchimento de uma coluna, eu escrevo null:
+INSERT INTO funcionarios
+VALUES (1, 'João Silva', 'Analista', null, TO_DATE('2025-01-15', 'YYYY-MM-DD'));
+
+• SEQUENCE
+
+Uma sequence é um objeto do banco de dados que gera números sequenciais, normalmente 
+usados para preencher automaticamente chaves primárias.
+No Oracle, não existe auto-increment nativo como no MySQL, então usamos sequences para 
+gerar IDs únicos.
+
+CREATE SEQUENCE nome_da_sequence
+START WITH valor_inicial
+INCREMENT BY incremento
+[MINVALUE valor_minimo | NOMINVALUE]
+[MAXVALUE valor_maximo | NOMAXVALUE]
+[CYCLE | NOCYCLE]
+[CACHE n | NOCACHE];
+
+START WITH	Número inicial da sequence (ex: 1)
+INCREMENT BY	Quanto aumenta a cada chamada (ex: 1)
+MINVALUE / MAXVALUE	Limites mínimo e máximo
+NOCYCLE	Quando atingir o máximo, para de gerar valores
+CYCLE	Quando atingir o máximo, volta pro mínimo
+CACHE n	Pré-aloca n valores para melhorar performance
+NOCACHE	Não pré-aloca valores
+
+Como usar a sequence em um INSERT?
+
+INSERT INTO departamento(id_departamento, nome, localizacao)
+VALUES (seq_departamento.NEXTVAL, 'Financeiro', 'Prédio A');
+
+seq_departamento.NEXTVAL → gera o próximo id_departamento automaticamente
+Não precisa calcular manualmente o ID
+
+
+

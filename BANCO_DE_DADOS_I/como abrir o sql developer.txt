@@ -1,0 +1,11 @@
+ORACLE SQL DEVELOPER
+
+Exibir-> Data Modeler-> browser
+
+Modelo lógico(com botão direito)->mostrar
+
+notação de baker
+inverte a mínima, ou seja, é representada ao lado da entidade
+mantem a máxima no lado oposto
+linha contínua é obrigatório (pelo menos 1)
+linha pontilhada é zero (não obrigatório)

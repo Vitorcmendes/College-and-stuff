@@ -1,0 +1,21 @@
+create table cliente
+(id_cliente,nome,endereco,telefone);
+
+create table produto
+(id_produto, nome, preco, quantidade_estoque);
+
+create table pedido
+(id_pedido, id_cliente, data_pedido, data_entrega)
+constraint FK_Cliente_id_cliente
+foreign key (id_cliente) references cliente ; --fk: id_cliente
+
+create table pedido_produto
+(id_pedido,id_produto,preco_venda,quantidade) --fk: id_pedido, id_produto
+
+alter table pedido_produto add
+constraint FK_Produto_id_pedido
+foreign key (id_pedido) references produto;
+
+alter table pedido_produto add
+constraint FK_Produto_id_pedido
+foreign key (id_pedido) references pedido;

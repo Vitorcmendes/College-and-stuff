@@ -1,0 +1,84 @@
+create table cliente(
+    id_cliente number(10) PRIMARY KEY,
+    nome varchar2(50),
+    endereco varchar2(100),
+    telefone number(15)
+);
+
+create table produto (
+    id_produto number(10) PRIMARY KEY,
+    nome varchar2(50),
+    preco number(38),
+    quantidade_estoque number(38)
+);
+
+create table pedido(
+    id_pedido number(38) PRIMARY KEY,
+    id_cliente number(10),
+    data_pedido date,
+    data_entrega date,
+    constraint fk_id_cliente FOREIGN KEY (id_cliente) references cliente (id_cliente)
+);
+
+create table pedido_produto (
+    id_pedido number,
+    id_produto number,
+    preco_venda number,
+    quantidade number,
+    primary key(id_pedido, id_produto)
+);
+
+create sequence cliente_sequence
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1 
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+insert into cliente(id_cliente)
+values (cliente_sequence.nextval);
+create sequence produto_sequence
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+create sequence pedido_sequence
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+create sequence pedido_produto_sequence
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+NOCACHE;
+
+insert into produto(id_produto)
+values (produto_sequence.nextval);
+
+insert into pedido(id_pedido)
+values (pedido_sequence.nextval);
+
+
+drop table cliente;
+
+drop table produto;
+
+drop table pedido;
+
+drop table pedido_produto;
+
+drop sequence cliente_sequence;
+
+drop sequnce produto_sequence;
+
+drop sequence pedido_sequence;
+
+drop pedido_produto_sequence; 
+

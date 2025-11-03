@@ -1,0 +1,60 @@
+1 - select nome
+from produto
+order by nome asc;
+
+2 - select nome
+from produto
+where quantidade_estoque > 50 or preco <10;
+
+3 - select pedido.id_pedido, pedido.data_pedido, cliente.nome
+from pedido
+inner join cliente
+   on pedido.id_cliente = cliente.id_cliente;
+
+4- select pedido_produto.id_pedido , pedido_produto.id_produto,
+produto.nome, pedido_produto.valor_venda from pedido_produto
+inner join produto
+    on pedido_produto.id_produto = produto.id_produto
+order by pedido_produto.id_pedido asc;
+
+5 - select pedido_produto.id_pedido, produto.nome, pedido_produto.quantidade
+from pedido_produto 
+inner join produto
+on pedido_produto.id_produto = produto.id_produto
+where pedido_produto.quantidade > 10;
+
+6- select pedido_produto.id_produto, pedido.id_pedido, pedido.data_pedido, cliente.nome
+from pedido
+inner join cliente
+on pedido.id_cliente = cliente.id_cliente
+inner join pedido_produto
+on pedido.id_pedido = pedido_produto.id_pedido
+where pedido_produto.id_produto = 2;
+
+7 - select pedido.id_pedido, pedido.data_pedido, cliente.nome, produto.nome
+from pedido
+inner join cliente
+on pedido.id_cliente = cliente.id_cliente
+inner join pedido_produto
+on pedido.id_pedido = pedido_produto.id_pedido
+inner join produto
+on pedido_produto.id_produto = produto.id_produto
+where produto.nome = 'mesa';
+
+8 - select pedido.id_pedido, cliente.nome, pedido.data_pedido, pedido.data_entrega
+from pedido
+inner join cliente
+on pedido.id_cliente = cliente.id_cliente
+where pedido.data_entrega is null;
+
+9 - select pedido_produto.id_pedido, cliente.nome, produto.nome,
+pedido_produto.quantidade*produto.preco "total produto"
+from pedido_produto
+inner join pedido
+on pedido_produto.id_pedido = pedido.id_pedido
+inner join produto
+on pedido_produto.id_produto = produto.id_produto
+inner join cliente
+on pedido.id_cliente = cliente.id_cliente
+order by pedido_produto.id_pedido asc, produto.nome;
+
