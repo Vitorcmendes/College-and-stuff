@@ -1,0 +1,68 @@
+
+VITOR DE CASTRO MENDES
+
+tabelas
+agencia (id_agencia, nome); 
+pk:id_agencia
+
+cliente_cc(id_cliente,nome,endereco,id_agencia);  
+pk: id_cliente
+id_agencia referencia agencia
+
+Conta (numero_conta,tipo, saldo, id_cliente);
+pk: numero_conta
+id_cliente referencia cliente 
+tipo Check CC ou P
+
+emprestimo(id_emprestimo, valor, data_emprestimo, id_cliente);
+pk:id_emprestimo
+id_cliente referencia cliente 
+
+1.Recuperar o nome do cliente, o nome da agencia, o numero da conta, tipo (poupança ou Conta Corrente)
+e o saldo.
+
+select cli.nome, ag.nome, conta.numero_conta, conta.tipo, conta.saldo
+from cliente_cc cli
+inner join conta
+on cli.id_cliente = conta.id_cliente
+inner join agencia ag
+on cli.id_agencia = ag.id_agencia;
+
+2.Recuperar o total de clientes da agencia Cavalhada.
+
+select count(cli.id_cliente) as contagem
+from cliente_cc cli
+inner join agencia ag
+on cli.id_agencia = ag.id_agencia
+where ag.nome = 'Cavalhada';
+
+3.Recuperar o nome da agencia e o total de clientes.
+
+select ag.nome as nome_agencia, count(cli.id_agencia) as total_de_clientes_ag
+from agencia ag
+inner join cliente_cc cli
+on cli.id_agencia = ag.id_agencia
+group by ag.nome;
+
+4.Recuperar o nome dos cliente da agencia Petropolis e o somatorio dos seus emprestimos. ( se o cliente não tiver empréstimos deve aparecer somatório zero)
+
+select cli.nome as nome_do_cliente, nvl(sum(emp.valor),0) as valor_total_emprestimos
+from cliente_cc cli
+left outer join emprestimo emp
+on emp.id_cliente = cli.id_cliente
+inner join agencia ag
+on cli.id_agencia = ag.id_agencia
+where ag.nome = 'Petropolis'
+group by cli.nome;
+
+5.Recuperar o nome dos clientes que realizaram mais de dois empréstimos no ano de 2019 com valor superior a R$ 10.000,00.
+
+select cli.nome as nome_do_cliente
+from cliente_cc cli
+inner join emprestimo emp
+on emp.id_cliente = cli.id_cliente
+where emp.valor > 10000
+and data_emprestimo <= to_date('31/12/2019', 'dd/mm/yyyy')
+and data_emprestimo >= to_date('01/01/2019', 'dd/mm/yyyy')
+group by cli.nome
+having count(cli.nome)>2;
